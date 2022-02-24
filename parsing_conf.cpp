@@ -190,7 +190,11 @@ int serverConf::isValidLocation(std::string content, std::string locationName)
         if (!rawContent[i])
             return FALSE;
         i = 0;
-        std::string trimContent = rawContent.substr(rawContent.find_first_not_of("\t\n\r\v\f "), rawContent.length() - rawContent.find_first_not_of("\t\n\r\v\f "));
+        std::string trimContent = "";
+        if (rawContent.find_first_not_of("\t\n\r\v\f ") != std::string::npos)
+            trimContent = rawContent.substr(rawContent.find_first_not_of("\t\n\r\v\f "), rawContent.length() - rawContent.find_first_not_of("\t\n\r\v\f "));
+        else
+            trimContent = rawContent;
         pos = idx + 1;
         if (key == "autoindex" && trimContent == "on")  
             trimContent = "1";
@@ -203,14 +207,20 @@ int serverConf::isValidLocation(std::string content, std::string locationName)
     return TRUE;
 }
 
-int serverConf::getLocation(std::string content, std::string *key, size_t *pos, bool *isLocation)
+int serverConf::getLocation(std::string content, std::string key, size_t *pos, bool *isLocation)
 {
     std::string locationName = "";
     std::string blockLocation = "";
     size_t i = 0;
 
-    locationName = content.substr(content.find(*key, *pos) + key->length(), content.substr(content.find(*key, *pos) + key->length()).find("{", 0));
-    locationName = locationName.substr(locationName.find_first_not_of("\t\n\r\v\f "), locationName.find_last_not_of("\t\n\r\v\f "));
+    if (content.find(key, *pos) != std::string::npos && content.substr(content.find(key, *pos) + key.length()).find("{", 0) != std::string::npos)
+        locationName = content.substr(content.find(key, *pos) + key.length(), content.substr(content.find(key, *pos) + key.length()).find("{", 0));
+    else
+        return FALSE;
+    if (locationName.find_first_not_of("\t\n\r\v\f ") != std::string::npos && locationName.find_last_not_of("\t\n\r\v\f ") != std::string::npos)
+        locationName = locationName.substr(locationName.find_first_not_of("\t\n\r\v\f "), locationName.find_last_not_of("\t\n\r\v\f "));
+    else
+        return FALSE;
     setLocationId(locationName);
     if (content.find("{", *pos) != std::string::npos)
         blockLocation = getBlockLocation(&content[content.find("{", *pos) + 1]);
@@ -244,7 +254,7 @@ int serverConf::isValidServer(std::string content)
             return FALSE;
         if (key == "location")
         {
-            if (getLocation(content, &key, &pos, &isLocation) == FALSE)
+            if (getLocation(content, key, &pos, &isLocation) == FALSE)
                 return FALSE;
         }
         else
@@ -274,7 +284,11 @@ int serverConf::isValidServer(std::string content)
             if (!rawContent[i])
                 return FALSE;
             i = 0;
-            std::string trimContent = rawContent.substr(rawContent.find_first_not_of("\t\n\r\v\f "), rawContent.length() - rawContent.find_first_not_of("\t\n\r\v\f "));
+            std::string trimContent = "";
+            if (rawContent.find_first_not_of("\t\n\r\v\f ") != std::string::npos)
+                trimContent = rawContent.substr(rawContent.find_first_not_of("\t\n\r\v\f "), rawContent.length() - rawContent.find_first_not_of("\t\n\r\v\f "));
+            else
+                trimContent = rawContent;
             pos = idx + 1;
             http.data()[http.size() - 1][category][key].push_back(trimContent);
         }

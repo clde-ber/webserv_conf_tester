@@ -3,9 +3,9 @@ rm computer.log
 rm program.log
 rm details.txt
 
-n=60;
+n=8;
 
-while [ $n -le 71 ]
+while [ $n -le 9 ]
 do
     cd ../../../etc/nginx; sudo rm nginx_old; sudo mv nginx.conf nginx_old; cd; cd conf_tester/; sudo -n cp nginx$n.conf ../../../etc/nginx/nginx.conf;
 

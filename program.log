@@ -1,4 +1,2 @@
-test 60 : error 1
-test 61 : error 1
-test 62 : error 0
-test 63 : 
+test 8 : error 134
+test 9 : error 1
