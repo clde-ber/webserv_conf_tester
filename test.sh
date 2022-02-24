@@ -3,11 +3,14 @@ rm computer.log
 rm program.log
 rm details.txt
 
+cd ../../../etc/nginx/; sudo -n mv nginx.conf nginx_old_conf; sudo -n touch nginx.conf;
+cd; cd conf_tester/;
+
 n=1;
 
 while [ $n -le 71 ]
 do
-    cd ../../../etc/nginx; sudo rm nginx_old; sudo mv nginx.conf nginx_old; cd; cd conf_tester/; sudo -n cp nginx$n.conf ../../../etc/nginx/nginx.conf;
+    cd ../../../etc/nginx/; sudo -n rm nginx_old; sudo -n mv nginx.conf nginx_old; cd; cd conf_tester/; sudo -n cp nginx$n.conf ../../../etc/nginx/nginx.conf;
 
     echo -n "test $n : " >> computer.log;
     sudo -n service nginx restart;
