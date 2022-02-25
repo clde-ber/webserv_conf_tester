@@ -10,6 +10,11 @@ std::string serverConf::getContent(std::string file)
     int length = is.tellg();
     is.seekg(0, is.beg);
 
+    if (length == -1)
+    {
+        is.close();
+        return "";
+    }
     char *buffer = new char[length];
 
     //std::cout << "Reading " << length << " characters... ";
@@ -20,10 +25,8 @@ std::string serverConf::getContent(std::string file)
       //std::cout << "all characters read successfully.";
     //else
       //std::cout << "error: only " << is.gcount() << " could be read";
-    is.close();
 
     // ...buffer contains the entire file...
-
     ret = std::string(buffer, length);
     delete [] buffer;
   }
@@ -107,7 +110,8 @@ int serverConf::findRelevantId(std::string content, std::vector< std::string > i
 
     while (i < ids.size())
     {
-        if (content.find(ids[i], pos) != std::string::npos && isspace(content.at(content.find(ids[i], pos) + ids[i].length())))
+        if (content.find(ids[i], pos) != std::string::npos && isspace(content.at(content.find(ids[i], pos) + ids[i].length())) \
+        && (!pos || (pos && isspace(content.at(content.find(ids[i], pos) - 1)))))
         {
             if (content.find(ids[i], pos) < prevIdPos || prevIdPos == 0)
             {
@@ -135,9 +139,11 @@ int serverConf::validSeparator(std::vector< std::string > ids, std::string conte
     size_t prevIdIndex = 0;
     size_t index = 0;
     bool found = 0;
+
     while (index < ids.size())
     {
-        if (content.find(ids[index], pos) != std::string::npos && isspace(content.at(content.find(ids[index], pos) + ids[index].length())))
+        if (content.find(ids[index], pos) != std::string::npos && isspace(content.at(content.find(ids[index], pos) + ids[index].length())) && \
+        (!pos || (pos && isspace(content.at(content.find(ids[index], pos) - 1))))) // this line can be removed if cgi ID is renamed
         {
             if (content.find(ids[index], pos) < prevIdIndex || prevIdIndex == 0)
                 prevIdIndex = content.find(ids[index], pos);
@@ -410,7 +416,7 @@ int serverConf::topLevelDirectives(std::string content)
         i = 0;
         while (i < _directives.size())
         {
-            if (!content.compare(pos, _directives[i].length(), _directives[i]))
+            if (!content.compare(pos, _directives[i].length(), _directives[i]) && (!pos || (pos && isspace(content.at(content.find(_directives[i], pos) - 1)))))
             {
                 count[i]++;
                 knownDirective++;
@@ -643,6 +649,45 @@ int serverConf::checkMissing()
     return TRUE;
 }
 
+int serverConf::checkNegValues()
+{
+    size_t i = 0;
+    size_t j = 0;
+
+    if (http.size() == 0)
+        return FALSE;
+    while (i < http.size())
+    {
+        if (!http.data()[i]["server"]["listen"].empty())
+        {
+            while (j < http.data()[i]["server"]["listen"].size())
+            {
+                if (atoi(http.data()[i]["server"]["listen"][j].c_str()) < 0)
+                {
+                    std::cout << "server " << i << " invalid port - negative number" << std::endl;
+                        return FALSE;
+                }
+                j++;
+            }
+        }
+        j = 0;
+        if (!http.data()[i]["server"]["client_max_body_size"].empty())
+        {
+            while (j < http.data()[i]["server"]["client_max_body_size"].size())
+            {
+                if (atoi(http.data()[i]["server"]["client_max_body_size"][j].c_str()) < 0)
+                {
+                    std::cout << "server " << i << " invalid client_max_body_size - negative number" << std::endl;
+                        return FALSE;
+                }
+                j++;
+            }
+        }
+        i++;
+    }
+    return TRUE;
+}
+
 int start_conf(char *str)
 {
     serverConf conf;
@@ -661,6 +706,7 @@ int start_conf(char *str)
     ret = (ret) ? conf.parseContent(noComment) : 0;
     //missing info
     ret = (ret) ? conf.checkMissing() : 0;
+    ret = (ret) ? conf.checkNegValues() : 0;
     //clé valeurs
     //conf.printMap();
     //is valid ?
