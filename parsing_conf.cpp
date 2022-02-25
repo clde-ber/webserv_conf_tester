@@ -233,11 +233,13 @@ int serverConf::getLocation(std::string content, std::string key, size_t *pos, b
         locationName = locationName.substr(locationName.find_first_not_of("\t\n\r\v\f "), locationName.find_last_not_of("\t\n\r\v\f "));
     else
         return FALSE;
+    if (locationName.find("\t\n\r\v\f ") != std::string::npos)
+        return FALSE;
     setLocationId(locationName);
     if (content.find("{", *pos) != std::string::npos)
         blockLocation = getBlockLocation(&content[content.find("{", *pos) + 1]);
     else
-        return FALSE;    
+        return FALSE;
     if (isValidLocation(blockLocation, locationName) == FALSE)
         return FALSE;
     if (content.find("}", *pos) != std::string::npos)
@@ -417,6 +419,7 @@ int serverConf::topLevelDirectives(std::string content)
 
     while (pos < content.length())
     {
+        knownDirective = 0;
         while (pos < content.length() && isspace(content.at(pos)))
             pos++;
         i = 0;
@@ -452,11 +455,11 @@ int serverConf::topLevelDirectives(std::string content)
         }
     }
     i = 0;
-    while (i < 4)
+    while (i < 2)
     {
         if (count[i] > 1)
             return FALSE;
-        if (i == 1 && count[i] == 0)
+        if (count[i] == 0)
             return FALSE;
         i++;
     }
@@ -500,6 +503,8 @@ int serverConf::parseContent(std::string content)
         }
         else
             return TRUE;
+        if (block.find("location", pos) < block.find("server", pos))
+            return FALSE;
     }
     return TRUE;
 }
@@ -681,11 +686,10 @@ int serverConf::checkNegValues()
         {
             while (j < http.data()[i]["server"]["listen"].size())
             {
-                if (atoi(http.data()[i]["server"]["listen"][j].c_str()) < 0)
-                {
-                    std::cout << "server " << i << " invalid port - negative number" << std::endl;
-                        return FALSE;
-                }
+                if (atoi(http.data()[i]["server"]["listen"][j].c_str()) < 0 \
+                || (http.data()[i]["server"]["listen"][j].substr(http.data()[i]["server"]["listen"][j].find_first_of("0123456789", 0), 2) != "80" \
+                && http.data()[i]["server"]["listen"][j].substr(http.data()[i]["server"]["listen"][j].find_first_of("0123456789", 0), 3) != "443"))
+                    return FALSE;
                 j++;
             }
         }

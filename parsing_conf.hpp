@@ -26,8 +26,8 @@ class serverConf
         {
             _directives.push_back("events");
             _directives.push_back("http");
-            _directives.push_back("mail");
-            _directives.push_back("stream");
+            //_directives.push_back("mail");
+            //_directives.push_back("stream");
             _serverIds.push_back("listen");
             _serverIds.push_back("server_name");
             _serverIds.push_back("location");
