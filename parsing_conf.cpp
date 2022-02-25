@@ -110,8 +110,7 @@ int serverConf::findRelevantId(std::string content, std::vector< std::string > i
 
     while (i < ids.size())
     {
-        if (content.find(ids[i], pos) != std::string::npos && isspace(content.at(content.find(ids[i], pos) + ids[i].length())) \
-        && (!pos || (pos && isspace(content.at(content.find(ids[i], pos) - 1)))))
+        if (content.find(ids[i], pos) != std::string::npos && isspace(content.at(content.find(ids[i], pos) + ids[i].length())))
         {
             if (content.find(ids[i], pos) < prevIdPos || prevIdPos == 0)
             {
@@ -130,6 +129,13 @@ int serverConf::findRelevantId(std::string content, std::vector< std::string > i
         if (pos + i == content.length())
             return TRUE;
         return FALSE;
+    }
+    i = 0;
+    while (pos + i < prevIdPos)
+    {
+        if (!isspace(content.at(pos + i)))
+            return FALSE;
+        i++;
     }
     return TRUE;
 }
@@ -275,7 +281,7 @@ int serverConf::isValidServer(std::string content)
                 i++;
             if (pos + i == content.length())
                 return TRUE;
-            else if (content.find(";", pos) != std::string::npos && content.find(";", pos) != pos && (isspace(content.at(content.find(";", pos) + 1)) || content.at(content.find(";", pos) + 1) == '}'))
+            else if (content.find(";", pos) != std::string::npos && content.find(";", pos) != pos && isspace(content.at(content.find(";", pos) + 1)))
             {
                 idx = content.find(";", pos);
                 if (validSeparator(_serverIds, content, pos + key.length(), idx) == FALSE)
@@ -416,7 +422,7 @@ int serverConf::topLevelDirectives(std::string content)
         i = 0;
         while (i < _directives.size())
         {
-            if (!content.compare(pos, _directives[i].length(), _directives[i]) && (!pos || (pos && isspace(content.at(content.find(_directives[i], pos) - 1)))))
+            if (!content.compare(pos, _directives[i].length(), _directives[i]))
             {
                 count[i]++;
                 knownDirective++;
@@ -465,16 +471,29 @@ int serverConf::parseContent(std::string content)
         return FALSE;
     size_t pos = 0;
     std::string blockServer = "";
-    while (pos != content.length())
+    if (content.find("http", pos) != std::string::npos && (isspace(content.at(content.find("http", pos) + std::string("http").length())) \
+    || content.at(content.find("http", pos) + 1) == '{'))
     {
-        if ((pos = content.find("server", pos)) != std::string::npos)
+        pos = content.find("http", pos) + std::string("http").length();
+        if (content.find("{", pos) != std::string::npos)
+            pos = content.find("{", pos) + 1;
+        else
+            return FALSE;
+    }
+    else
+        return FALSE;
+    std::string block = getBlock(&content[pos]);
+    pos = 0;
+    while (pos < block.length())
+    {
+        if ((pos = block.find("server", pos)) != std::string::npos)
         {
             pos += std::string("server").length();
-            if (content.find("{", pos) != std::string::npos)
-                blockServer = getBlock(&content[content.find("{", pos) + 1]);
+            if (block.find("{", pos) != std::string::npos)
+                blockServer = getBlock(&block[block.find("{", pos) + 1]);
             else
                 return FALSE;
-            pos = content.find("{", pos) + blockServer.length();
+            pos = block.find("{", pos) + blockServer.length();
             setServerId();
             if (isValidServer(blockServer) == FALSE)
                 return FALSE;
