@@ -741,7 +741,7 @@ int start_conf(char *str)
     //clé valeurs
     //conf.printMap();
     //is valid ?
-    std::cout << ret << std::endl;
+    //std::cout << ret << std::endl;
     conf._valid = ret;
     return !ret;
 }
