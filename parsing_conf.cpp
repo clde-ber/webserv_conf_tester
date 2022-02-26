@@ -677,6 +677,8 @@ int serverConf::checkNegValues()
 {
     size_t i = 0;
     size_t j = 0;
+    int portNb = 0;
+    size_t index = 0;
 
     if (http.size() == 0)
         return FALSE;
@@ -686,10 +688,16 @@ int serverConf::checkNegValues()
         {
             while (j < http.data()[i]["server"]["listen"].size())
             {
-                if (atoi(http.data()[i]["server"]["listen"][j].c_str()) < 0 \
-                || (http.data()[i]["server"]["listen"][j].substr(http.data()[i]["server"]["listen"][j].find_first_of("0123456789", 0), 2) != "80" \
-                && http.data()[i]["server"]["listen"][j].substr(http.data()[i]["server"]["listen"][j].find_first_of("0123456789", 0), 3) != "443"))
+                portNb = 0;
+                index = 0;
+                if (http.data()[i]["server"]["listen"][j].rfind(":", http.data()[i]["server"]["listen"][j].length()) != std::string::npos)
+                    index = http.data()[i]["server"]["listen"][j].rfind(":", http.data()[i]["server"]["listen"][j].length()) + 1;
+                portNb = atoi(http.data()[i]["server"]["listen"][j].substr(index, http.data()[i]["server"]["listen"][j].length() - index).c_str());
+                if (!(portNb > 0 && portNb <= 65535))
+                {
+                    std::cout << "server " << i << " invalid port" << std::endl;
                     return FALSE;
+                }
                 j++;
             }
         }
@@ -733,6 +741,7 @@ int start_conf(char *str)
     //clé valeurs
     //conf.printMap();
     //is valid ?
+    std::cout << ret << std::endl;
     conf._valid = ret;
     return !ret;
 }

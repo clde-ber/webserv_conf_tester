@@ -69,3 +69,5 @@ test 68 : computer 1 | program 1
 test 69 : computer 1 | program 1
 test 70 : computer 0 | program 0
 test 71 : computer 1 | program 1
+test 72 : computer 1 | program 1
+test 73 : computer 0 | program 0

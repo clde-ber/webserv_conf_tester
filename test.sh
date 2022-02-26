@@ -11,7 +11,7 @@ n=1;
 p=0;
 c=0;
 
-while [ $n -le 71 ]
+while [ $n -le 73 ]
 do
     cd ../../../etc/nginx/; sudo -n rm nginx_old; sudo -n mv nginx.conf nginx_old; cd; cd web_tester/; sudo -n cp nginx$n.conf ../../../etc/nginx/nginx.conf;
 
