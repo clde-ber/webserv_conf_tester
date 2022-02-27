@@ -1,18 +1,1210 @@
+************************************************** test 1 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:12:28 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12177 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12189 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 12179 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 12190 (nginx)
+    Tasks: 2 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           ├─12190 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─12191 nginx: worker process
+
+févr. 27 19:12:28 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:12:28 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:12:28 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:12:28 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+************************************************** test 2 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:12:35 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12236 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12189 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 12239 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12190 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:12:35 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:12:35 salty-VirtualBox nginx[12239]: nginx: [emerg] "server" directive is not allowed here in /etc/nginx/nginx.conf:16
+févr. 27 19:12:35 salty-VirtualBox nginx[12239]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:12:35 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:12:35 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:12:35 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 3 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:12:41 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12236 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12189 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 12274 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12190 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:12:41 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:12:41 salty-VirtualBox nginx[12274]: nginx: [emerg] "server" directive is not allowed here in /etc/nginx/nginx.conf:16
+févr. 27 19:12:41 salty-VirtualBox nginx[12274]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:12:41 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:12:41 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:12:41 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 4 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:12:50 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12236 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12189 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 12322 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12190 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:12:50 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:12:50 salty-VirtualBox nginx[12322]: nginx: [emerg] invalid number of arguments in "location" directive in /etc/nginx/nginx.conf:28
+févr. 27 19:12:50 salty-VirtualBox nginx[12322]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:12:50 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:12:50 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:12:50 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 5 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:12:56 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12236 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12189 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 12363 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12190 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:12:55 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:12:56 salty-VirtualBox nginx[12363]: nginx: [emerg] invalid number of arguments in "location" directive in /etc/nginx/nginx.conf:28
+févr. 27 19:12:56 salty-VirtualBox nginx[12363]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:12:56 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:12:56 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:12:56 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 6 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:13:01 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12236 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12189 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 12413 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12190 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:13:01 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:13:01 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:13:01 salty-VirtualBox nginx[12413]: nginx: [emerg] "server" directive is not allowed here in /etc/nginx/nginx.conf:27
+févr. 27 19:13:01 salty-VirtualBox nginx[12413]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:13:01 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:13:01 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 7 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:13:07 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12236 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12189 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 12453 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12190 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:13:07 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:13:07 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:13:07 salty-VirtualBox nginx[12453]: nginx: [emerg] "server" directive is not allowed here in /etc/nginx/nginx.conf:32
+févr. 27 19:13:07 salty-VirtualBox nginx[12453]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:13:07 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:13:07 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 8 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:13:14 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12236 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12189 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 12498 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12190 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:13:14 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:13:14 salty-VirtualBox nginx[12498]: nginx: [emerg] invalid number of arguments in "location" directive in /etc/nginx/nginx.conf:26
+févr. 27 19:13:14 salty-VirtualBox nginx[12498]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:13:14 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:13:14 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:13:14 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 9 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:13:20 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12236 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12189 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 12540 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12190 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:13:20 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:13:20 salty-VirtualBox nginx[12540]: nginx: [emerg] "server" directive is not allowed here in /etc/nginx/nginx.conf:11
+févr. 27 19:13:20 salty-VirtualBox nginx[12540]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:13:20 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:13:20 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:13:20 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 10 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:13:26 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12236 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12591 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 12580 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 12592 (nginx)
+    Tasks: 2 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           ├─12592 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─12593 nginx: worker process
+
+févr. 27 19:13:26 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:13:26 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:13:26 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+************************************************** test 11 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:13:32 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12623 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12591 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 12626 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12592 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:13:32 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:13:32 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:13:32 salty-VirtualBox nginx[12626]: nginx: [emerg] "server" directive is not allowed here in /etc/nginx/nginx.conf:5
+févr. 27 19:13:32 salty-VirtualBox nginx[12626]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:13:32 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:13:32 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:13:32 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 12 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:13:37 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12623 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12591 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 12674 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12592 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:13:37 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:13:37 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:13:38 salty-VirtualBox nginx[12674]: nginx: [emerg] unknown directive "unknown" in /etc/nginx/nginx.conf:5
+févr. 27 19:13:38 salty-VirtualBox nginx[12674]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:13:37 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:13:37 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 13 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:13:43 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12623 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12591 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 12713 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12592 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:13:43 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:13:43 salty-VirtualBox nginx[12713]: nginx: [emerg] unknown directive "unknown_identifier" in /etc/nginx/nginx.conf:22
+févr. 27 19:13:43 salty-VirtualBox nginx[12713]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:13:43 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:13:43 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:13:43 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 14 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:13:49 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12623 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12591 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 12753 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12592 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:13:49 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:13:49 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:13:49 salty-VirtualBox nginx[12753]: nginx: [emerg] "ssl_certificate" directive is not allowed here in /etc/nginx/nginx.conf:38
+févr. 27 19:13:49 salty-VirtualBox nginx[12753]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:13:49 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:13:49 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 15 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:13:55 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12623 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12591 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 12795 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12592 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:13:55 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:13:55 salty-VirtualBox nginx[12795]: nginx: [emerg] directive "server" has no opening "{" in /etc/nginx/nginx.conf:7
+févr. 27 19:13:55 salty-VirtualBox nginx[12795]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:13:55 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:13:55 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:13:55 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 16 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:14:01 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12623 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12591 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 12837 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12592 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:14:01 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:14:01 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:14:01 salty-VirtualBox nginx[12837]: nginx: [emerg] directive "location" has no opening "{" in /etc/nginx/nginx.conf:27
+févr. 27 19:14:01 salty-VirtualBox nginx[12837]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:14:01 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:14:01 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 17 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:14:07 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12623 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12591 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 12877 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12592 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:14:07 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:14:07 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:14:07 salty-VirtualBox nginx[12877]: nginx: [emerg] unexpected ";" in /etc/nginx/nginx.conf:27
+févr. 27 19:14:07 salty-VirtualBox nginx[12877]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:14:07 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:14:07 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 18 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:14:13 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12623 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12591 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 12926 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12592 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:14:13 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:14:13 salty-VirtualBox nginx[12926]: nginx: [emerg] invalid number of arguments in "root" directive in /etc/nginx/nginx.conf:23
+févr. 27 19:14:13 salty-VirtualBox nginx[12926]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:14:13 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:14:13 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:14:13 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 19 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:14:19 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12623 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12591 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 12967 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12592 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:14:19 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:14:19 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:14:19 salty-VirtualBox nginx[12967]: nginx: [emerg] unexpected "}" in /etc/nginx/nginx.conf:33
+févr. 27 19:14:19 salty-VirtualBox nginx[12967]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:14:19 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:14:19 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 20 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:14:25 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12623 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12591 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13007 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12592 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:14:25 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:14:25 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:14:25 salty-VirtualBox nginx[13007]: nginx: [emerg] invalid number of arguments in "server_name" directive in /etc/nginx/nginx.conf:9
+févr. 27 19:14:25 salty-VirtualBox nginx[13007]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:14:25 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:14:25 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 21 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:14:31 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12623 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12591 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13045 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12592 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:14:31 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:14:31 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:14:31 salty-VirtualBox nginx[13045]: nginx: [emerg] directive "index" is not terminated by ";" in /etc/nginx/nginx.conf:26
+févr. 27 19:14:31 salty-VirtualBox nginx[13045]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:14:31 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:14:31 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 22 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:14:37 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12623 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12591 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13099 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12592 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:14:37 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:14:37 salty-VirtualBox nginx[13099]: nginx: [emerg] no "events" section in configuration
+févr. 27 19:14:37 salty-VirtualBox nginx[13099]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:14:37 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:14:37 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:14:37 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 23 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:14:43 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12623 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12591 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13143 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12592 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:14:43 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:14:43 salty-VirtualBox nginx[13143]: nginx: [emerg] unknown directive "mail" in /etc/nginx/nginx.conf:50
+févr. 27 19:14:43 salty-VirtualBox nginx[13143]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:14:43 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:14:43 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:14:43 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 24 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:14:49 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12623 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 12591 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13191 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 12592 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:14:49 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:14:49 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:14:49 salty-VirtualBox nginx[13191]: nginx: [emerg] unknown directive "stream" in /etc/nginx/nginx.conf:50
+févr. 27 19:14:49 salty-VirtualBox nginx[13191]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:14:49 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:14:49 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 25 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:14:55 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 12623 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 13243 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13232 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 13244 (nginx)
+    Tasks: 2 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           ├─13244 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─13245 nginx: worker process
+
+févr. 27 19:14:55 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:14:55 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:14:55 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+************************************************** test 26 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:15:01 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 13277 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 13243 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13279 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 13244 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:15:01 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:15:01 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:15:01 salty-VirtualBox nginx[13279]: nginx: [emerg] unknown directive "mail" in /etc/nginx/nginx.conf:50
+févr. 27 19:15:01 salty-VirtualBox nginx[13279]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:15:01 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:15:01 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:15:01 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 27 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:15:08 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 13277 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 13243 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13326 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 13244 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:15:08 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:15:08 salty-VirtualBox nginx[13326]: nginx: [emerg] unknown directive "stream" in /etc/nginx/nginx.conf:50
+févr. 27 19:15:08 salty-VirtualBox nginx[13326]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:15:08 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:15:08 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:15:08 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 28 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:15:14 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 13277 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 13243 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13370 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 13244 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:15:14 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:15:14 salty-VirtualBox nginx[13370]: nginx: [emerg] unexpected ";" in /etc/nginx/nginx.conf:2
+févr. 27 19:15:14 salty-VirtualBox nginx[13370]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:15:14 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:15:14 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:15:14 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 29 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:15:20 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 13277 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 13243 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13435 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 13244 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:15:20 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:15:20 salty-VirtualBox nginx[13435]: nginx: [emerg] unknown directive "mail" in /etc/nginx/nginx.conf:50
+févr. 27 19:15:20 salty-VirtualBox nginx[13435]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:15:20 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:15:20 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:15:20 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 30 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:15:27 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 13277 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 13243 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13477 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 13244 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:15:27 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:15:27 salty-VirtualBox nginx[13477]: nginx: [emerg] unknown directive "stream" in /etc/nginx/nginx.conf:50
+févr. 27 19:15:27 salty-VirtualBox nginx[13477]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:15:27 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:15:27 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:15:27 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 31 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:15:33 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 13277 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 13243 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13519 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 13244 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:15:33 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:15:33 salty-VirtualBox nginx[13519]: nginx: [emerg] unknown directive "id_and_no_value" in /etc/nginx/nginx.conf:2
+févr. 27 19:15:33 salty-VirtualBox nginx[13519]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:15:33 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:15:33 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:15:33 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 32 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:15:39 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 13277 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 13243 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13569 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 13244 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:15:39 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:15:39 salty-VirtualBox nginx[13569]: nginx: [emerg] unexpected end of file, expecting ";" or "}" in /etc/nginx/nginx.conf:50
+févr. 27 19:15:39 salty-VirtualBox nginx[13569]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:15:39 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:15:39 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:15:39 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 33 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:15:45 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 13277 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 13243 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13610 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 13244 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:15:45 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:15:45 salty-VirtualBox nginx[13610]: nginx: [emerg] unknown directive "stream" in /etc/nginx/nginx.conf:51
+févr. 27 19:15:45 salty-VirtualBox nginx[13610]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:15:45 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:15:45 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:15:45 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 34 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:15:51 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 13277 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 13667 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13658 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 13668 (nginx)
+    Tasks: 2 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           ├─13668 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─13669 nginx: worker process
+
+févr. 27 19:15:51 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:15:51 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:15:51 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
 ************************************************** test 35 **************************************************
 ● nginx.service - A high performance web server and a reverse proxy server
    Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
-   Active: active (running) since Sun 2022-02-27 17:19:18 CET; 2s ago
+   Active: active (running) since Sun 2022-02-27 19:15:57 CET; 2s ago
      Docs: man:nginx(8)
-  Process: 1073 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
-  Process: 1084 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
-  Process: 1076 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
- Main PID: 1085 (nginx)
+  Process: 13702 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 13715 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13704 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 13716 (nginx)
     Tasks: 2 (limit: 4666)
    CGroup: /system.slice/nginx.service
-           ├─1085 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
-           └─1087 nginx: worker process
+           ├─13716 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─13717 nginx: worker process
 
-févr. 27 17:19:18 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
-févr. 27 17:19:18 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
-févr. 27 17:19:18 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
-févr. 27 17:19:18 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+févr. 27 19:15:57 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:15:57 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:15:57 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:15:57 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+************************************************** test 36 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:16:03 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 13749 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 13762 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13751 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 13763 (nginx)
+    Tasks: 2 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           ├─13763 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─13764 nginx: worker process
+
+févr. 27 19:16:02 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:16:02 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:16:02 salty-VirtualBox nginx[13751]: nginx: [warn] conflicting server name "192.168.49.2" on 0.0.0.0:80, ignored
+févr. 27 19:16:03 salty-VirtualBox nginx[13762]: nginx: [warn] conflicting server name "192.168.49.2" on 0.0.0.0:80, ignored
+févr. 27 19:16:03 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:16:03 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+************************************************** test 37 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:16:09 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 13794 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 13762 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13795 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 13763 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:16:09 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:16:09 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:16:09 salty-VirtualBox nginx[13795]: nginx: [emerg] unknown directive "key" in /etc/nginx/nginx.conf:2
+févr. 27 19:16:09 salty-VirtualBox nginx[13795]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:16:09 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:16:09 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:16:09 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 38 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:16:15 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 13794 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 13854 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13846 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 13855 (nginx)
+    Tasks: 2 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           ├─13855 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─13856 nginx: worker process
+
+févr. 27 19:16:15 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:16:15 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:16:15 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+************************************************** test 39 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:16:21 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 13888 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 13901 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13890 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 13902 (nginx)
+    Tasks: 2 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           ├─13902 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─13903 nginx: worker process
+
+févr. 27 19:16:21 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:16:21 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:16:21 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:16:21 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+************************************************** test 40 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:16:27 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 13951 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 13964 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13953 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 13965 (nginx)
+    Tasks: 2 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           ├─13965 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─13966 nginx: worker process
+
+févr. 27 19:16:27 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:16:27 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:16:27 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:16:27 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+************************************************** test 41 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:16:33 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 13997 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 13964 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 13999 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 13965 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:16:33 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:16:33 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:16:33 salty-VirtualBox nginx[13999]: nginx: [emerg] "server_name" directive is not allowed here in /etc/nginx/nginx.conf:13
+févr. 27 19:16:33 salty-VirtualBox nginx[13999]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:16:33 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:16:33 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:16:33 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 42 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:16:39 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 13997 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14051 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14043 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 14055 (nginx)
+    Tasks: 2 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           ├─14055 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─14056 nginx: worker process
+
+févr. 27 19:16:39 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:16:39 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:16:39 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+************************************************** test 43 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:16:45 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14078 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14091 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14080 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 14092 (nginx)
+    Tasks: 2 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           ├─14092 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─14093 nginx: worker process
+
+févr. 27 19:16:45 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:16:45 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:16:45 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:16:45 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+************************************************** test 44 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:16:51 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14123 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14091 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14125 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 14092 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:16:51 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:16:51 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:16:51 salty-VirtualBox nginx[14125]: nginx: [emerg] unknown directive "methods" in /etc/nginx/nginx.conf:47
+févr. 27 19:16:51 salty-VirtualBox nginx[14125]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:16:51 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:16:51 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:16:51 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 45 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:16:57 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14123 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14175 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14169 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 14180 (nginx)
+    Tasks: 2 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           ├─14180 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─14181 nginx: worker process
+
+févr. 27 19:16:57 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:16:57 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:16:57 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+************************************************** test 46 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:17:03 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14217 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14230 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14219 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 14231 (nginx)
+    Tasks: 2 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           ├─14231 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─14232 nginx: worker process
+
+févr. 27 19:17:03 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:17:03 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:17:03 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:17:03 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+************************************************** test 47 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:17:09 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14262 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14230 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14264 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 14231 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:17:09 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:17:09 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:17:09 salty-VirtualBox nginx[14264]: nginx: [emerg] unknown directive "default" in /etc/nginx/nginx.conf:11
+févr. 27 19:17:09 salty-VirtualBox nginx[14264]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:17:09 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:17:09 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:17:09 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 48 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:17:15 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14262 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14230 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14306 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 14231 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:17:15 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:17:15 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:17:15 salty-VirtualBox nginx[14306]: nginx: [emerg] unknown directive "cgi" in /etc/nginx/nginx.conf:16
+févr. 27 19:17:15 salty-VirtualBox nginx[14306]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:17:15 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:17:15 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 49 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:17:21 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14262 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14230 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14355 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 14231 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:17:21 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:17:21 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:17:21 salty-VirtualBox nginx[14355]: nginx: [emerg] invalid port in "0" of the "listen" directive in /etc/nginx/nginx.conf:7
+févr. 27 19:17:21 salty-VirtualBox nginx[14355]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:17:21 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:17:21 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 50 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:17:27 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14262 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14403 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14395 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 14404 (nginx)
+    Tasks: 2 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           ├─14404 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─14405 nginx: worker process
+
+févr. 27 19:17:27 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:17:27 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:17:27 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+************************************************** test 51 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:17:33 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14438 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14451 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14440 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 14452 (nginx)
+    Tasks: 1 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           └─14452 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+
+févr. 27 19:17:33 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:17:33 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:17:33 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:17:33 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+************************************************** test 52 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:17:39 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14498 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14451 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14499 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 14452 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:17:39 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:17:39 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:17:39 salty-VirtualBox nginx[14499]: nginx: [emerg] host not found in "-7890" of the "listen" directive in /etc/nginx/nginx.conf:7
+févr. 27 19:17:39 salty-VirtualBox nginx[14499]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:17:39 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:17:39 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:17:39 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 53 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:17:45 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14498 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14451 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14551 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 14452 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:17:45 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:17:45 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:17:45 salty-VirtualBox nginx[14551]: nginx: [emerg] "client_max_body_size" directive invalid value in /etc/nginx/nginx.conf:16
+févr. 27 19:17:45 salty-VirtualBox nginx[14551]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:17:45 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:17:45 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 54 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:17:51 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14498 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14451 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14591 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 14452 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:17:51 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:17:51 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:17:51 salty-VirtualBox nginx[14591]: nginx: [emerg] invalid number "-2048" in /etc/nginx/nginx.conf:2
+févr. 27 19:17:51 salty-VirtualBox nginx[14591]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:17:51 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:17:51 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 55 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:17:57 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14498 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14651 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14640 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 14652 (nginx)
+    Tasks: 2 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           ├─14652 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─14653 nginx: worker process
+
+févr. 27 19:17:57 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:17:57 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:17:57 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+************************************************** test 56 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:18:03 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14685 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14698 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14687 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 14699 (nginx)
+    Tasks: 2 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           ├─14699 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─14700 nginx: worker process
+
+févr. 27 19:18:03 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:18:03 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:18:03 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:18:03 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+************************************************** test 57 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:18:09 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14740 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14698 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14742 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 14699 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:18:09 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:18:09 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:18:09 salty-VirtualBox nginx[14742]: nginx: [emerg] no "events" section in configuration
+févr. 27 19:18:09 salty-VirtualBox nginx[14742]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:18:09 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:18:09 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:18:09 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 58 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:18:15 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14740 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14698 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14789 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 14699 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:18:15 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:18:15 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:18:15 salty-VirtualBox nginx[14789]: nginx: [emerg] no "events" section in configuration
+févr. 27 19:18:15 salty-VirtualBox nginx[14789]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:18:15 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:18:15 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 59 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:18:21 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14740 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14698 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14830 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 14699 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:18:21 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:18:21 salty-VirtualBox nginx[14830]: nginx: [emerg] unexpected end of file, expecting "}" in /etc/nginx/nginx.conf:47
+févr. 27 19:18:21 salty-VirtualBox nginx[14830]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:18:21 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:18:21 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:18:21 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 60 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:18:27 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14740 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14698 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14870 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 14699 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:18:27 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:18:27 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:18:27 salty-VirtualBox nginx[14870]: nginx: [emerg] directive "location" has no opening "{" in /etc/nginx/nginx.conf:38
+févr. 27 19:18:27 salty-VirtualBox nginx[14870]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:18:27 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:18:27 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 61 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:18:33 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14740 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14698 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14928 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 14699 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:18:33 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:18:33 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:18:33 salty-VirtualBox nginx[14928]: nginx: [emerg] directive "server" has no opening "{" in /etc/nginx/nginx.conf:19
+févr. 27 19:18:33 salty-VirtualBox nginx[14928]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:18:33 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:18:33 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 62 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:18:39 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14740 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 14698 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 14970 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 14699 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:18:39 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:18:39 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:18:39 salty-VirtualBox nginx[14970]: nginx: [emerg] "location" directive is not allowed here in /etc/nginx/nginx.conf:43
+févr. 27 19:18:39 salty-VirtualBox nginx[14970]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:18:39 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:18:39 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 63 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:18:45 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 14740 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 15017 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 15009 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 15018 (nginx)
+    Tasks: 2 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           ├─15018 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─15022 nginx: worker process
+
+févr. 27 19:18:45 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:18:45 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:18:45 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+************************************************** test 64 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:18:51 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 15052 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 15065 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 15054 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 15066 (nginx)
+    Tasks: 2 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           ├─15066 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─15067 nginx: worker process
+
+févr. 27 19:18:51 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:18:51 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:18:51 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:18:51 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+************************************************** test 65 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:18:57 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 15099 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 15065 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 15101 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 15066 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:18:57 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:18:57 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:18:57 salty-VirtualBox nginx[15101]: nginx: [emerg] unexpected ";" in /etc/nginx/nginx.conf:35
+févr. 27 19:18:57 salty-VirtualBox nginx[15101]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:18:57 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:18:57 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:18:57 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 66 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:19:03 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 15099 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 15065 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 15143 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 15066 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:19:03 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:19:03 salty-VirtualBox nginx[15143]: nginx: [emerg] unexpected ";" in /etc/nginx/nginx.conf:16
+févr. 27 19:19:03 salty-VirtualBox nginx[15143]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:19:03 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:19:03 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:19:03 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 67 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:19:09 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 15099 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 15065 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 15191 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 15066 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:19:09 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:19:09 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:19:09 salty-VirtualBox nginx[15191]: nginx: [emerg] unexpected ";" in /etc/nginx/nginx.conf:48
+févr. 27 19:19:09 salty-VirtualBox nginx[15191]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:19:09 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:19:09 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 68 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:19:15 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 15099 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 15065 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 15230 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 15066 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:19:15 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:19:15 salty-VirtualBox nginx[15230]: nginx: [emerg] "server" directive is not allowed here in /etc/nginx/nginx.conf:38
+févr. 27 19:19:15 salty-VirtualBox nginx[15230]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:19:15 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:19:15 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:19:15 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 69 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:19:21 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 15099 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 15065 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 15281 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 15066 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:19:21 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:19:21 salty-VirtualBox nginx[15281]: nginx: [emerg] "location" directive is not allowed here in /etc/nginx/nginx.conf:44
+févr. 27 19:19:21 salty-VirtualBox nginx[15281]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:19:21 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:19:21 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:19:21 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 70 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:19:27 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 15099 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 15329 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 15321 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 15330 (nginx)
+    Tasks: 2 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           ├─15330 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─15331 nginx: worker process
+
+févr. 27 19:19:27 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:19:27 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:19:27 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.
+************************************************** test 71 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:19:33 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 15364 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 15329 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 15366 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 15330 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:19:33 salty-VirtualBox systemd[1]: Stopped A high performance web server and a reverse proxy server.
+févr. 27 19:19:33 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:19:33 salty-VirtualBox nginx[15366]: nginx: [emerg] directive "location" has no opening "{" in /etc/nginx/nginx.conf:36
+févr. 27 19:19:33 salty-VirtualBox nginx[15366]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:19:33 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:19:33 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:19:33 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 72 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Sun 2022-02-27 19:19:39 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 15364 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 15329 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 15408 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=1/FAILURE)
+ Main PID: 15330 (code=exited, status=0/SUCCESS)
+
+févr. 27 19:19:39 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:19:39 salty-VirtualBox nginx[15408]: nginx: [emerg] invalid port in "65536" of the "listen" directive in /etc/nginx/nginx.conf:7
+févr. 27 19:19:39 salty-VirtualBox nginx[15408]: nginx: configuration file /etc/nginx/nginx.conf test failed
+févr. 27 19:19:39 salty-VirtualBox systemd[1]: nginx.service: Control process exited, code=exited status=1
+févr. 27 19:19:39 salty-VirtualBox systemd[1]: nginx.service: Failed with result 'exit-code'.
+févr. 27 19:19:39 salty-VirtualBox systemd[1]: Failed to start A high performance web server and a reverse proxy server.
+************************************************** test 73 **************************************************
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2022-02-27 19:19:44 CET; 2s ago
+     Docs: man:nginx(8)
+  Process: 15364 ExecStop=/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid (code=exited, status=0/SUCCESS)
+  Process: 15467 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+  Process: 15456 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+ Main PID: 15468 (nginx)
+    Tasks: 2 (limit: 4666)
+   CGroup: /system.slice/nginx.service
+           ├─15468 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+           └─15469 nginx: worker process
+
+févr. 27 19:19:44 salty-VirtualBox systemd[1]: Starting A high performance web server and a reverse proxy server...
+févr. 27 19:19:44 salty-VirtualBox systemd[1]: nginx.service: Failed to parse PID from file /run/nginx.pid: Invalid argument
+févr. 27 19:19:44 salty-VirtualBox systemd[1]: Started A high performance web server and a reverse proxy server.

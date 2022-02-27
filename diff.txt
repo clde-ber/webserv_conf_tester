@@ -1,0 +1,9 @@
+test 10 : c 0 | p 1
+test 16 : c 1 | p 0
+test 31 : c 1 | p 0
+test 34 : c 0 | p 1
+test 36 : c 0 | p 1
+test 38 : c 0 | p 1
+test 48 : c 1 | p 0
+test 54 : c 1 | p 0
+test 66 : c 1 | p 0

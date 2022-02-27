@@ -543,7 +543,6 @@ int serverConf::getData()
     std::cout << "Pour chaque serveur, récupérer son port (crea socket) " << std::endl;
     size_t i = 0;
     size_t j = 0;
-
     while (i < http.size())
     {
         while (j < http.data()[i]["server"]["listen"].size())
@@ -557,7 +556,6 @@ int serverConf::getData()
     std::cout << "Pour chaque serveur, récupérer son nbr max de connexion(taille) (crea socket) " << std::endl;
     i = 0;
     j = 0;
-
     while (i < http.size())
     {
         while (j < http.data()[i]["server"]["client_max_body_size"].size())
@@ -571,7 +569,6 @@ int serverConf::getData()
     std::cout << "Pour chaque serveur, recupérer son nom (check socket) " << std::endl;
     i = 0;
     j = 0;
-
     while (i < http.size())
     {
         while (j < http.data()[i]["server"]["server_name"].size())
@@ -585,7 +582,6 @@ int serverConf::getData()
     std::cout << "pour un serveur, recupere le port (gestion requete) " << std::endl;
     i = 2; //index du serveur;
     j = 0;
-
     while (j < http.data()[i]["server"]["listen"].size())
     {
         std::cout << http.data()[i]["server"]["listen"][j] << std::endl;
@@ -594,7 +590,6 @@ int serverConf::getData()
     std::cout << "pour un serveur, recuperer error page(gestion requete) " << std::endl;
     i = 0; //index du serveur;
     j = 0;
-
     while (j < http.data()[i]["server"]["error_page"].size())
     {
         std::cout << http.data()[i]["server"]["error_page"][j] << std::endl;
@@ -603,7 +598,6 @@ int serverConf::getData()
     std::cout << "pour un serveur, recuperer  la ou les roots (gestion requete) " << std::endl;
     i = 0; //index du serveur;
     j = 0;
-
     while (j < http.data()[i]["server"]["root"].size())
     {
         std::cout << http.data()[i]["server"]["root"][j] << std::endl;
@@ -614,7 +608,6 @@ int serverConf::getData()
     j = 0;
     std::map< std::string, std::map< std::string, std::vector< std::string > > >::iterator it = http.data()[i].begin();
     std::map< std::string, std::map< std::string, std::vector< std::string > > >::iterator ite = http.data()[i].end();
-
     for(; it != ite; it++)
     {
         if (it->first == "server")
@@ -648,6 +641,7 @@ int serverConf::checkMissing()
 {
     size_t i = 0;
     size_t j = 1;
+    size_t isRoot = 0;
 
     if (http.size() == 0)
         return FALSE;
@@ -662,6 +656,26 @@ int serverConf::checkMissing()
         {
             std::cout << "no location in server " << i << std::endl;
             return FALSE;
+        }
+        else
+        {
+            for (std::map< std::string, std::map< std::string, std::vector< std::string > > >::iterator it = http.data()[i].begin(); it != http.data()[i].end(); it++)
+            {
+                if (it->first != "server")
+                {
+                    for (std::map< std::string, std::vector< std::string > >::iterator itk = http.data()[i][it->first].begin(); itk != http.data()[i][it->first].end(); itk++)
+                    {
+                        if (itk->first == "root")
+                            isRoot = 1;
+                    }
+                    if (!isRoot)
+                    {
+                        std::cout << "missing root in location" << std::endl;
+                        return FALSE;
+                    }
+                }
+                isRoot = 0;
+            }
         }
         i++;
     }
